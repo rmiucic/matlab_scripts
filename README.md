@@ -1,7 +1,9 @@
 # matlab_scripts
-| Left-aligned | Center-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |     :---:      |          ---: |
-| git status   | git status     | git status     | git status    |
-| git diff     | git diff       | git diff       | git diff      |
 | Script 	   | Description | Inputs | Outputs |
+| :---         |     :---:      |     :---:      |          ---: |
 | XYfromGPS.m  | Converts GPS coordinates (latitude and longitude) into cartesian coordinate (X and Y) system and provides bearing angle between two points |  latitude and longitude in degrees | X and Y in meters and bearing angle in degrees | | 	rect.m     | 	Returns points of a rectange R_c [x1 x2 x3 x4 x1; y1 y2 y3 y4 y1] given the with, height, center of the rectangle and orientation/heading angle orientation angle zero to the north positive towards east.	|  w-width in m, h-height in m,cx - x coordinate of center in m,cy - y coordinate of center in m, head_deg - heading in degrees|  5 points (5th is the first point) R_c [x1 x2 x3 x4 x1; y1 y2 y3 y4 y1] in meters | 
+| GPSDistance.m| Given latitude and longidude of two points return distance between them. | lat1_deg,long1_deg,lat2_deg,long2_deg in degrees| distance between two points in meters | 
+| readCSV1.m   | Reads CSV file and returns array of numeric values input is "date-time, latitude, longitude" such as 2015-03-29T17:15:58Z,-83.119639,42.476276 output is nx5 array [hour minute second long lat]| filename of the CSV file to read in | 5 column array of [hour minute second long lat] | 
+| CSV1toKML.m  |reads in CSV1 file converts it to KML file	input is "date-time, latitude, longitude" such as 2015-03-29T17:15:58Z,-83.119639,42.476276 | filename of the CSV file to read in| KML file of the same base name as filename | 
+| timeDiff.m   |Given hour miunte and sec of two times return differnce in seconds between them| time 1: hh1, mm1, ss1,and time 2:  hh2, mm2, ss2| seconds	| 
+| tm_gps_xy_dst_spd_hd.m |  Given filename reads CSV file and returns array of numeric values.	Input is "date-time, latitude, longitude" such as "2015-03-29T17:15:58Z,-83.119639,42.476276" output is n x 5 array [tm_sec long_deg lat_deg x_m y_m dist_m spd_mps hd_deg]	tm_sec - first value is zero and consecutive value is an ofset of the first value of the input time | filename of the CSV file to read in| 5 column array of [hour minute second long lat] | 
